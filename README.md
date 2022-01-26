@@ -41,3 +41,6 @@ All of this data is pulled from pro/semi-pro matches as Valorant lacks a way to 
 
 ## Credits
 Thanks to Joshua Broas for the [dataset](https://www.kaggle.com/visualize25/valorant-pro-matches-full-data).
+
+Work sponsored by SDN. [Join SDN today.](https://joinsdn.com)<br>
+<img src="https://github.com/FrankWhoee/joinSDN/blob/master/public/images/logo-green-bg.svg" width="10%">
