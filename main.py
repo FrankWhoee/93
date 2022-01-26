@@ -44,7 +44,12 @@ data = []
 limit = 100000
 print("Scraping vlr.gg for score timeline... limit={}".format(limit))
 # Scrape vlr.gg for score timeline.
+limit = max(limit,len(matches))
+progress = 0
+report_interval = 25
 for match in matches.keys():
+    if(int(progress/limit * 100) % report_interval == 0):
+        print("Progress: " + str(progress/limit * 100))
     driver.get('https://vlr.gg/{}'.format(match))
     h1 = driver.find_element(By.CLASS_NAME, "vm-stats-container")
     c1 = h1.find_elements(By.CLASS_NAME, "vm-stats-game")
@@ -64,9 +69,9 @@ for match in matches.keys():
             else:
                 g.append(1 if ctwin else -1)
         data.append(g)
-    limit -= 1;
-    if limit <= 0:
+    if progress >= limit:
         break
+    progress+= 1
 print("Complete. Saving to data.pickle.")
 with open('data.pickle', 'wb') as fp:
     pickle.dump(data, fp)
