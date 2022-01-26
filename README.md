@@ -17,18 +17,25 @@ To begin collecting data:
 To begin analysis:
 1. `python3 analysis.py`
 
+### How to interpret results in data.pickle:
+`data.pickle` contains lists of game timelines, where for each game, 1 is a CT win, and -1 is a T win.
+
 ## Preliminary results
-As of 6:25pm PDT I am still running the scraping program but so far these are the results:<br>
-Sample size: 932
-- Chance of losing from 7-5: 0.225
-- Chance of losing from 8-4: 0.1377551020408163
-- Chance of losing from 9-3: 0.08648648648648649
-- Chance of losing from 10-2: 0.04878048780487805
-- Chance of losing from 11-1: 0.0
+As of 8:55pm PDT these are the results:<br>
+Sample size: 5137
+- Chance of losing from 7-5: 0.23533778767631774
+- Chance of losing from 8-4: 0.1242344706911636
+- Chance of losing from 9-3: 0.058091286307053944
+- Chance of losing from 10-2: 0.025185185185185185
+- Chance of losing from 11-1: 0.003367003367003367
 - Chance of losing from 12-0: 0.0
 
 ## Discussion
 The naive interpretation is that there is no 9-3 curse because the probability of losing at 9-3 is not higher than either 8-4 or 7-5, which our preliminary data clearly proves. A more nuanced interpretation would be finding the expected probability of losing given a score of 9-3 is lower than the empirical data.
+
+![](graph.png)
+
+This graph shows there is no noticeable difference in loss probability at 9-3, and our data fits the trendline pretty well, so the probability of losing a 9-3 game is the same as expected.
 
 All of this data is pulled from pro/semi-pro matches as Valorant lacks a way to collect data en masse for ranked games, so it's possible that the phenomenon felt in ranked doesn't show up in pro/semi-pro settings.
 
