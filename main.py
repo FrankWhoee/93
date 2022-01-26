@@ -54,12 +54,10 @@ print("Scraping vlr.gg for score timeline... limit={}".format(limit))
 # Scrape vlr.gg for score timeline.
 
 progress = 0
-report_interval = 5
+report_interval = 50
 for match in matches.keys():
-    if(int((progress/limit) * 100) % report_interval == 0 and int((progress/limit) * 100)  != 0):
-        print("Progress: " + str((progress/limit) * 100))
-        dumpdata()
-    elif progress % 50 == 0:
+    if progress % report_interval == 0:
+        print("Progress: " + str((progress / limit) * 100))
         dumpdata()
         print(progress)
     driver.get('https://vlr.gg/{}'.format(match))

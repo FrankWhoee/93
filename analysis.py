@@ -42,11 +42,11 @@ for game in data:
     sumtotal[majority_half_end_score] += 1
     total += 1
 
-print("Games analyzed: " + str(total))
+print("Sample size: " + str(total))
 winrate = np.asarray(summary[6:13]) / np.asarray(sumtotal[6:13])
-print("Chance of losing from 7-5: " + str(winrate[1]))
-print("Chance of losing from 8-4: " + str(winrate[2]))
-print("Chance of losing from 9-3: " + str(winrate[3]))
-print("Chance of losing from 10-2: " + str(winrate[4]))
-print("Chance of losing from 11-1: " + str(winrate[5]))
-print("Chance of losing from 12-0: " + str(winrate[6]))
+print("- Chance of losing from 7-5: " + str(winrate[1]))
+print("- Chance of losing from 8-4: " + str(winrate[2]))
+print("- Chance of losing from 9-3: " + str(winrate[3]))
+print("- Chance of losing from 10-2: " + str(winrate[4]))
+print("- Chance of losing from 11-1: " + str(winrate[5]))
+print("- Chance of losing from 12-0: " + str(winrate[6]))
