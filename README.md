@@ -19,11 +19,11 @@ To begin analysis:
 
 ## Preliminary results
 As of 6:25pm PDT I am still running the scraping program but so far these are the results:<br>
-Sample size: 840
-- Chance of losing from 7-5: 0.2175925925925926
-- Chance of losing from 8-4: 0.143646408839779
-- Chance of losing from 9-3: 0.07453416149068323
-- Chance of losing from 10-2: 0.03636363636363636
+Sample size: 932
+- Chance of losing from 7-5: 0.225
+- Chance of losing from 8-4: 0.1377551020408163
+- Chance of losing from 9-3: 0.08648648648648649
+- Chance of losing from 10-2: 0.04878048780487805
 - Chance of losing from 11-1: 0.0
 - Chance of losing from 12-0: 0.0
 
