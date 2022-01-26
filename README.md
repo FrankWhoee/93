@@ -18,7 +18,7 @@ To begin analysis:
 1. `python3 analysis.py`
 
 ## Preliminary results
-As of 6:25pm PDT I am still running the scraping program but so far these are the results:
+As of 6:25pm PDT I am still running the scraping program but so far these are the results:<br>
 Sample size: 840
 - Chance of losing from 7-5: 0.2175925925925926
 - Chance of losing from 8-4: 0.143646408839779
