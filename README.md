@@ -30,6 +30,8 @@ Sample size: 5137
 - Chance of losing from 11-1: 0.003367003367003367
 - Chance of losing from 12-0: 0.0
 
+Data for this particular sample is availabe [here](https://github.com/FrankWhoee/93/blob/21677a65c9bd0c6097bf00e612802d73dd24b63d/data.pickle). Stored as a pickle of a 2D array (a list of game timelines).
+
 ## Discussion
 The naive interpretation is that there is no 9-3 curse because the probability of losing at 9-3 is not higher than either 8-4 or 7-5, which our preliminary data clearly proves. A more nuanced interpretation would be finding the expected probability of losing given a score of 9-3 is lower than the empirical data.
 
