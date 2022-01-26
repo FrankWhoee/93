@@ -1,15 +1,22 @@
 import os
 import pickle
 import numpy as np
+import sys
 
-if (not os.path.exists("data.pickle")):
-    print("No data found. Running main.py...")
-    import main
-else:
-    print("Reading from data.pickle...")
-    with open('data.pickle', 'rb') as fp:
+if len(sys.argv) > 1:
+    print("Reading from " + sys.argv[1] + "...")
+    with open(sys.argv[1], 'rb') as fp:
         data = pickle.load(fp)
     print("Complete.")
+else:
+    if (not os.path.exists("data.pickle")):
+        print("No data found. Running main.py...")
+        import main
+    else:
+        print("Reading from data.pickle...")
+        with open('data.pickle', 'rb') as fp:
+            data = pickle.load(fp)
+        print("Complete.")
 
 success = 0
 total = 0
@@ -50,5 +57,10 @@ print("- Chance of losing from 9-3: " + str(winrate[3]))
 print("- Chance of losing from 10-2: " + str(winrate[4]))
 print("- Chance of losing from 11-1: " + str(winrate[5]))
 print("- Chance of losing from 12-0: " + str(winrate[6]))
+print("---------------------------------")
+
+for s in range(7, len(summary)):
+    print("There were {} comeback games with a {}-{} score.".format(summary[s], s, 12-s))
+
 for wr in winrate:
     print(wr)

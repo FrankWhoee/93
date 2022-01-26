@@ -16,6 +16,7 @@ To begin collecting data:
 
 To begin analysis:
 1. `python3 analysis.py`
+2. If you want to run analysis on a custom file, do: `python3 analysis.py example.pickle`
 
 ### How to interpret results in data.pickle:
 `data.pickle` contains lists of game timelines, where for each game, 1 is a CT win, and -1 is a T win.
