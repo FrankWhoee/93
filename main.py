@@ -44,7 +44,7 @@ data = []
 limit = 100000
 print("Scraping vlr.gg for score timeline... limit={}".format(limit))
 # Scrape vlr.gg for score timeline.
-limit = max(limit,len(matches))
+limit = min(limit,len(matches))
 progress = 0
 report_interval = 25
 for match in matches.keys():
