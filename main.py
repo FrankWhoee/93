@@ -41,15 +41,27 @@ DRIVER_PATH = './chromedriver'
 driver = webdriver.Chrome(options=options, executable_path=DRIVER_PATH)
 
 data = []
+
+def dumpdata():
+    print("Saving to data.pickle.")
+    with open('data.pickle', 'wb') as fp:
+        pickle.dump(data, fp)
+    print("Complete.")
+
 limit = 100000
+limit = min(limit,len(matches))
 print("Scraping vlr.gg for score timeline... limit={}".format(limit))
 # Scrape vlr.gg for score timeline.
-limit = min(limit,len(matches))
+
 progress = 0
-report_interval = 25
+report_interval = 5
 for match in matches.keys():
-    if(int(progress/limit * 100) % report_interval == 0):
-        print("Progress: " + str(progress/limit * 100))
+    if(int((progress/limit) * 100) % report_interval == 0 and int((progress/limit) * 100)  != 0):
+        print("Progress: " + str((progress/limit) * 100))
+        dumpdata()
+    elif progress % 50 == 0:
+        dumpdata()
+        print(progress)
     driver.get('https://vlr.gg/{}'.format(match))
     h1 = driver.find_element(By.CLASS_NAME, "vm-stats-container")
     c1 = h1.find_elements(By.CLASS_NAME, "vm-stats-game")
@@ -76,3 +88,4 @@ print("Complete. Saving to data.pickle.")
 with open('data.pickle', 'wb') as fp:
     pickle.dump(data, fp)
 print("Complete.")
+
