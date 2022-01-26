@@ -50,3 +50,5 @@ print("- Chance of losing from 9-3: " + str(winrate[3]))
 print("- Chance of losing from 10-2: " + str(winrate[4]))
 print("- Chance of losing from 11-1: " + str(winrate[5]))
 print("- Chance of losing from 12-0: " + str(winrate[6]))
+for wr in winrate:
+    print(wr)
